@@ -15,3 +15,8 @@ Zusammengesetze Ausgabe
 	puts "Heute ist #{tag}, der #{Time.new}."
 		#Am Anfang und am Ende müssen "" Anführungszeichen stehen
 		#Innerhalb des Konstruktes #{} kann jeder Ruby Code ausgeführt werden. Es findet automatisch eine Konvertierung des Ergebnisses statt.
+
+Formatieren der Ausgabe
+	puts "Die Woche besteht aus:\n\tMontag\n\tDienstag."
+	#\n fügt einen Zeilenumbruch hinzu
+	#\t fügt einen Tabulatorschritt hinzu

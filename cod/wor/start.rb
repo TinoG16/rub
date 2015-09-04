@@ -1,4 +1,4 @@
-str="Heute ist Freitag"
+str="Die Woche besteht aus:\n\tMontag\n\tDienstag."
 puts str
 
 zahl=10
