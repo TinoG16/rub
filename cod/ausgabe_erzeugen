@@ -1,0 +1,17 @@
+Soll auf der Konsole eine Ausgabe erzeugt werden, geschieht das über den Befehl
+	puts <String>
+
+	puts "Ausgabe"				#Ausgabe eines Strings
+	puts variablen_name		#Ausgabe einer Variable, die einen String enthält
+	zahl=10
+	puts zahl.to_s
+
+	#puts kann keine Zahlen ausgeben
+
+Zusammengesetze Ausgabe
+	Ausgeben eines Strings, der sich aus Text und dem Inhalt von Variablen zusammensetzt
+
+	tag="Freitag"
+	puts "Heute ist #{tag}, der #{Time.new}."
+		#Am Anfang und am Ende müssen "" Anführungszeichen stehen
+		#Innerhalb des Konstruktes #{} kann jeder Ruby Code ausgeführt werden. Es findet automatisch eine Konvertierung des Ergebnisses statt.
