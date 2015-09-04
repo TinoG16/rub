@@ -24,6 +24,7 @@ puts "\n#{name1}'s health is #{health*3}"
 
 puts "\n#{name1}'s health is #{health/9}"
 puts "#{name1}'s health is #{health/9.to_f}"
+puts "#{name1}'s health is #{health/9.0}"
 
 puts "\nPlayers:\n\t#{name1}\n\tcurly\n\tmoe"
 puts "Players:\n\t#{name1}\n\t#{name2}\n\t#{name3}"
