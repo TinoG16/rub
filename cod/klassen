@@ -6,3 +6,18 @@ Definition
 Aufruf:
 	obj_movie1 = Movie.new
 		# obj_movie1 ist eine Variable, die ein Objekt vom Typ Movie enthält. Dieses Objekt enthält alle Eigenschaften, die in der Klasse Movie definiert wurden
+		# Ein Objekt wird erzeugt, indem der Klassenname, gefolt von dem Schlüsselwort 'new' eingegeben wird
+
+Konstruktor
+	Der Konstruktor wird jedes Mal aufgerufen, wenn ein neues Objekt erzeugt wird (Movie.new)
+	Im Hintergrund wird in der Klasse eine Methode mit dem Namen 'initialize' gesucht und der dort stehende Code ausgeführt.
+	Beispiel:
+		def initialize(ptitel, prank = "")
+			@titel = ptitel.capitalize
+			@rank = prank
+		end
+	In diesem Fall wird bei einem Aufruf von 'Movie.new("Ninja Turtles", 3)' in die Variable ptitel der Wert 'Ninja Turtles' gespeichert. Danach wird dieser Wert in die Instanzvariable @titel eingetragen. Das erzeugte Objekt hat nun eine Eigenschaft titel.
+
+Instanzvariable
+	Die Instanzvariable einer Klasse gilt in jeder Methode der Klasse. Während also ptitel nur innerhalb der Methode initialize gilt, kann die Instanzvariable '@titel' auch in jeder anderen Methode der Klasse Movie verwendet werden.
+	Eine andere Bezeichnung für Instanzvariable ist 'Attribut' oder 'Eigenschaft'.
