@@ -1,0 +1,8 @@
+Definition
+	Eine Klassedefinition wird mit dem Schlüsselwort 'class' begonnen und endet mit dem Schlüsselwort 'end'
+	Eine Klasse ist eine Art von Bauplan für einen Gegenstand der mit Programmcode dargestellt werden soll
+		# Klassenname beginnt immmer mit einem GROSSEN Buchstaben
+
+Aufruf:
+	obj_movie1 = Movie.new
+		# obj_movie1 ist eine Variable, die ein Objekt vom Typ Movie enthält. Dieses Objekt enthält alle Eigenschaften, die in der Klasse Movie definiert wurden
