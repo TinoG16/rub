@@ -26,26 +26,29 @@ def say_hello(name)
 	puts "Ich bin #{name}"
 end
 
-say_hello("Ludwig")
-say_hello("Wilhelm")
+say_hello("Ludwig2")
+say_hello("Wilhelm2")
 #----------------------------------------
 def say_hello(name)
 	"Ich bin #{name}"
 end
 
-puts say_hello("Ludwig")
+puts say_hello("Ludwig3")
 #----------------------------------------
 def say_hello(name, health = 100)
 	"Ich bin #{name} mit einem Wert von #{health}"
 end
 
-puts say_hello("Ludwig")
+puts say_hello("Ludwig4")
 #----------------------------------------
 def say_hello(name, health = 100)
-	"Ich bin #{name} mit einem Wert von #{health} um #{Time.now.strftime("%R")}"
+	"Ich bin #{name} mit einem Wert von #{health} um #{time}"
 end
 
-puts say_hello("Ludwig")
+def time
+	Time.now.strftime("%R")
+end
+puts say_hello("Ludwig5")
 
 #----------------------------------------
 
@@ -55,25 +58,25 @@ class Player
 			@health = health
 		end
 
-		def say_hello
+		def to_s
 			"Ich bin #{@name} mit einem Wert von #{@health} um #{Time.now.strftime("%R")}"
 		end
 
 		def blam
-			@health += 10
-			"#{@name} got blamed"
+			@health -= 10
+			puts "#{@name} got blamed"
 		end
 
 		def w00t
-			@health -= 10
-			"#{@name} got w00ted"
+			@health += 10
+			puts "#{@name} got w00ted"
 		end
 end
 
-player1 = Player.new("Ludwig", 110)
-puts player1.say_hello
-player2 = Player.new("Wilhelm")
-puts player2.say_hello
-puts player2.blam
-players = player1.say_hello + "\n" +player2.say_hello
+player1 = Player.new("Theo", 110)
+#puts player1.say_hello
+player2 = Player.new("Peter")
+#puts player2.say_hello
+player2.blam
+players = player1, player2
 puts players
