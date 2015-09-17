@@ -52,3 +52,5 @@ end
 obj = Customer.new("9999", "Lodgz")
 add = obj.set_firstname("Theo"), obj.set_street("Hermelinweg 7"), obj.set_city("22159 Hamburg")
 puts obj.print_address
+
+sfddsfdsf
