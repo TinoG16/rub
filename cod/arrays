@@ -31,5 +31,3 @@ Ausgabe
 	1.
 	puts variable[0]
 		# Der erste Wert wird ausgegeben
-	2.
-	

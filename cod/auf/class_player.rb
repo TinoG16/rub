@@ -7,3 +7,14 @@
 # g. passen Sie die say_hello - Methode aus der vorherigen Übung zur Ausgabe ein, so dass puts player1.say_hello die Ausgabe ergibt
 # h. fuegen Sie eine Instanzmethode blam und w00t hinzu, die den Wert fuer health umd 10 hochsetzt, bzw. reduziert und ausgibt: Tom got blamed, bzw. w00ted.
 # i. die say_hello - Methode soll aufgerufen werden, wenn nur das Objekt ausgegeben werden soll, also puts players erfolgt.
+
+class Player
+	def initialize(name, health = 100)
+		@name = name
+		@health = health
+	end
+end
+
+player1 = Player.new('Ralf', 100)
+player2 = Player.new('Jürgen')
+puts player1
