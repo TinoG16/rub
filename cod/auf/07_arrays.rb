@@ -3,10 +3,12 @@ variable = ['Sommer', 'Herbst', 'Winter']
 variable = %w(Sommer Herbst Winter)
 # b. lassen Sie ausgeben wieviele Elemente das Array enthaelt, welche Jahreszeit die zweite im Array ist
 variable.size
+variable[1]
 # c. fuegen Sie das Element fruehjahr hinzu
 variable << 'Frühling'
-variable.unshift('Frühling') # Einfügen an Position eins des Arrays
-variable.insert(3, 'Frühling') # Einfügen an Position vier des Arrays
+# Einfügen an Position eins des Arrays
+variable.unshift('Frühling')# Einfügen an Position vier des Arrays
+variable.insert(3, 'Frühling') 
 # d. entfernen Sie das Element wieder aus dem Array
 variable.pop
 # e. ermitteln Sie mit Hilfe von ri, wie join Ihnen bei einer folgendermassen formatierten Ausgabe behilflich sein kann: Sommer und Herbst und Winter
