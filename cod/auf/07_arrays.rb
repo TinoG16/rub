@@ -16,4 +16,10 @@ variable.join(" und ")
 # g. ermitteln Sie den Befehl mit dem Sie die Positionen der Elemente des Arrays nach einem Zufallsprinzip anordnen koennen
 variable.shuffle!
 # h. packen Sie Ihre drei Player aus dem Projekt in ein Array
+players = %w(Larry Curly Moe)
 # i. Geben Sie Player mit einer Iteration über das Array aus. Beginnen Sie mit einer Zeile, in der sie die Anzahl der Mitspieler notieren
+i = 0
+while i < players.size do
+	puts players[i]
+	i += 1
+end
