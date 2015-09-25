@@ -15,3 +15,5 @@ puts "#{str}, der #{Time.new}."
 3.times do |variable|
 	puts str
 end
+
+3.times { puts str; puts "Freitag" }

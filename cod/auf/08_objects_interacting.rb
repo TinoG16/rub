@@ -51,7 +51,7 @@ class Player
 
 	def blam
 		@health -=10
-		puts "#{@name} wurde geblamt!!!"
+		puts "#{@name} wurde geblamt!!! Aktueller Stand: #{@health}"
 	end
 	def w00t
 		@health += 10
@@ -62,10 +62,11 @@ class Player
 		@health + @name.length
 	end
 end
-player1 = Player.new('Theo', 5)
-player2 = Player.new('Peter')
+player1 = Player.new('Moe')
+player2 = Player.new('Larry', 60)
+player3 = Player.new('Curly', 125)
 
-players = [player1, player2]
+players = [player1, player2, player3]
 
 initgame = Game.new("Knuckleheads")
 players.size.times do |i|
