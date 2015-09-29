@@ -63,11 +63,18 @@ puts "\n"
 # d. Sortieren Sie den Hash, sodass die Ausgabe folgendermaßen möglich wird:
 # Einstellig: 1,3,5 ..
 # Zweistellig: 11, 13, ..
-puts "d----GEHT NICHT"
+puts "d----"
 require "prime"
 primzahlen = Prime.first 10
 prims = {}
-primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; prims = { primzahlen[i] => "ist einstellig" } else prims = { primzahlen[i] => "ist zweistellig" } end }
+ein = ""
+zwei = ""
+eins = ""
+zweis = ""
+primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; prims = { primzahlen[i] => "Einstellig" } else prims = { primzahlen[i] => "Zweistellig" } end; prims.each { |key, value|
+	if value == "Einstellig";  if ein == ""; ein += "#{key}" else ein += ", #{key}" end; eins = value else if zwei == ""; zwei += "#{key}" else zwei += ", #{key}" end; zweis = value end } }
+puts "#{eins}: #{ein}"
+puts "#{zweis}: #{zwei}"
 puts "\n"
 # e. Fortsetzung Aufgabe b: 
 # Speichern Sie den Hash in dem Array adressen und legen Sie zwei weitere Hashes personen mit den gleichen Keys und anderen Werten an. Durchlaufen Sie das Array, sodass folgende Ausgabe erfolgt.
@@ -93,7 +100,7 @@ puts "2a----"
 puts worte = %w(Pflaume Bauschaum Auster)
 puts "\n"
 # b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
-puts "b----GEHT NICHT"
+puts "b----"
 suche = "aus"
 if (worte.to_s.include? suche) == true
 	worte.each do
@@ -101,7 +108,7 @@ if (worte.to_s.include? suche) == true
 	end
 end
 puts worte[worte.to_s.index(suche)]
-#puts worte.to_s.match('aus')
+puts worte.to_s.match('aus')
 t = worte.to_s.scan(/\w+/)
 puts t
 puts "\n"
@@ -141,14 +148,17 @@ puts "\n"
 # str_2 = "Fussball, Bier, Programmieren"
 # Die Ausgabe lautet:
 # ergebnis = { :diff => ["Federball", "Whisky", "Fussball", "Bier"], :match => ["Programmieren"]}
-puts "4----GEHT NICHT"
-str_1 = "Programmieren, Federball, Whisky"
+puts "4----"
+str_1 = "Programmieren, Federball, Whisky, Bier"
 str_2 = "Fussball, Bier, Programmieren"
 str1 = str_1.scan(/\w+/)
 str2 = str_2.scan(/\w+/)
 str1.size.times do |i|
 	if (str2.include? str1[i]) == true
-		puts str1[i]
+		diff = (str1 - str2) + (str2 - str1)
+		# puts "ergebnis = { :diff #{diff}, :match [\"#{str1[i]}\"] }"
+		ergebnis = { :diff => diff, :match => str1[i] }
+		puts "ergebnis = #{ergebnis}"
 	end
 end
 puts "\n"
