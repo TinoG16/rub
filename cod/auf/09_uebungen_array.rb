@@ -69,10 +69,10 @@ primzahlen = Prime.first 10
 prims = {}
 ein = ""
 zwei = ""
-eins = ""
-zweis = ""
-primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; prims = { primzahlen[i] => "Einstellig" } else prims = { primzahlen[i] => "Zweistellig" } end; prims.each { |key, value|
-	if value == "Einstellig";  if ein == ""; ein += "#{key}" else ein += ", #{key}" end; eins = value else if zwei == ""; zwei += "#{key}" else zwei += ", #{key}" end; zweis = value end } }
+eins = "Einstellig"
+zweis = "Zweistellig"
+primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; prims = { primzahlen[i] => eins } else prims = { primzahlen[i] => zweis } end; prims.each { |key, value|
+	if value == eins;  if ein == ""; ein += "#{key}" else ein += ", #{key}" end; eins = value else if zwei == ""; zwei += "#{key}" else zwei += ", #{key}" end; zweis = value end } }
 puts "#{eins}: #{ein}"
 puts "#{zweis}: #{zwei}"
 puts "\n"
