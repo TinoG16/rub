@@ -141,7 +141,7 @@ puts "\n"
 # str_2 = "Fussball, Bier, Programmieren"
 # Die Ausgabe lautet:
 # ergebnis = { :diff => ["Federball", "Whisky", "Fussball", "Bier"], :match => ["Programmieren"]}
-puts "4----"
+puts "4----GEHT NICHT"
 str_1 = "Programmieren, Federball, Whisky"
 str_2 = "Fussball, Bier, Programmieren"
 str1 = str_1.scan(/\w+/)
