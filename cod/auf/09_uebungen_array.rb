@@ -96,7 +96,7 @@ adressen.size.times { |i, key, value| puts "#{i+1}. Person:\n"; adressen[i].each
 puts "\n"
 # 2. Worte
 # a. Bilde ein Array mit den Worten: Pflaume, Bauschaum, Auster
-puts "2a----"
+puts "2a----GEHT NICHT"
 puts worte = %w(Pflaume Bauschaum Auster)
 puts "\n"
 # b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
