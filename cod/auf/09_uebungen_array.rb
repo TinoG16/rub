@@ -161,8 +161,3 @@ str1.size.times do |i|
 		puts "ergebnis = #{ergebnis}"
 	end
 end
-<<<<<<< HEAD
-puts "\n"
-=======
-puts "\n"
->>>>>>> 4a4b987e745c17c66b329f81ce8f9b5a59df0dc0
