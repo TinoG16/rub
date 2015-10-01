@@ -5,14 +5,19 @@ puts "\n"
 # a. geben Sie diese Zahlen in einem Block aus
 puts "a----"
 numbers.size.times { |i| puts numbers[i] }
+puts "------ODER------"
+numbers.each { |i| puts i.to_s }
 puts "\n"
 # b. geben Sie die Zahlen mit dem Index etwa so aus: Index: 0 - Wert: 15
 puts "b----"
 numbers.size.times { |i| puts "Index: #{i} - Wert: #{numbers[i]}" }
+puts "------ODER------"
+numbers.each_with_index do |z, i|
+	puts "Index: #{i} - Wert: #{z}"
+end
 puts "\n"
 # c. erzeugen Sie in einem Block einen Hash, wobei Sie die Arraywerte als Index nutzen und als Wert eine Zufallszahl zwischen 100 und 200 speichern. 
 puts "c----"
-hash = {}
 numbers.size.times { |i| hash = Hash[numbers[i], rand(100) + 100]; puts "#{hash}" }
 puts "\n"
 # d. Geben Sie diesen Hash anschließen etwa so aus: Index: 15 - Wert: 121
@@ -86,14 +91,12 @@ primzahlen.size.times do |i|
 			else
 				ein += ", #{key}"
 			end
-			eins = value
 		else
 			if zwei == ""
 				zwei += "#{key}"
 			else
 				zwei += ", #{key}"
 			end
-			zweis = value
 		end
 	end
 end
@@ -124,17 +127,11 @@ puts "2a----"
 puts worte = %w(Pflaume Bauschaum Auster)
 puts "\n"
 # b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
-puts "b----GEHT NICHT"
+puts "b----"
 suche = "aus"
-if (worte.to_s.include? suche) == true
-	worte.each do
-		puts worte[2]
-	end
+worte.size.times do |i|
+	puts worte[i] if worte[i].include?(suche)
 end
-puts worte[worte.to_s.index(suche)]
-puts worte.to_s.match('aus')
-t = worte.to_s.scan(/\w+/)
-puts t
 puts "\n"
 # c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
 puts "c----"
