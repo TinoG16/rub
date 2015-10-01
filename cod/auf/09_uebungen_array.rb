@@ -65,6 +65,7 @@ quadrat.each do |z|
 end
 puts quadrat_hash
 puts "\n"
+puts "Zusatz----"
 # Zusatz Zahlen im Array und im Hash:
 # a. Legen Sie ein Array an mit 10 Primzahlen. Die Ausgabe des Arrays erzeugt:
 # 	1 ist einstellig
@@ -76,18 +77,40 @@ puts "a----"
 require "prime"
 primzahlen = Prime.first 10
 primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; puts "#{primzahlen[i]} ist einstellig" else puts "#{primzahlen[i]} ist zweistellig" end }
+puts "------ODER------"
+primzahlen = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
+primzahlen.each do |p|
+	if p.to_s.length < 2
+		puts "#{p} ist einstellig"
+	elsif p.to_s.length < 3 && p.to_s.length > 1
+		puts "#{p} ist zweistellig"
+	else
+	end
+end
 puts "\n"
 # b. Legen Sie zur Übung einen Hash personen an, mit den keys vorname, nachname, stadt und den Werten Theo, Sommer, Lodz. Machen Sie eine Ausgabe, die 'vorname: Theo + neue Zeile' ausgibt
 puts "b----"
 personen = { "Vorname" => "Theo", "Nachname" => "Sommer", "Stadt" => "Lodz" }
 personen.each { |key, value| puts "#{key}: #{value}" }
+puts "------ODER------"
+person = { vorname: "Theo", nachname: "Sommer", stadt: "Lodz" }
+person.each do |key, val|
+	puts "#{key.capitalize}: #{val}"
+end
 puts "\n"
 # c. Fortsetzung Aufgabe a: 
 # Speichern Sie beim Durchlaufen des Arrays die Werte in einem Hash mit der Bezeichnung prims, sodass die jeweilige Primzahl den Schlüssel bildet und der Wert den Text 'ist einstellig', 'ist zweistellig'
 puts "c----"
 require "prime"
 primzahlen = Prime.first 10
+prims = {}
 primzahlen.size.times { |i| if primzahlen[i].to_s.size < 2; prims = { primzahlen[i] => "ist einstellig" } else prims = { primzahlen[i] => "ist zweistellig" } end; puts prims }
+puts "------ODER------"
+prims = {}
+primzahlen.each do |p|
+	prims[p] = p.to_s.length < 2 ? " ist einstellig" : " ist zweistellig"
+end
+puts prims
 puts "\n"
 # d. Sortieren Sie den Hash, sodass die Ausgabe folgendermaßen möglich wird:
 # Einstellig: 1,3,5 ..
@@ -143,7 +166,22 @@ personen = { "Vorname" => "Tino", "Nachname" => "Juenger", "Stadt" => "Frankfurt
 adressen << personen
 personen = { "Vorname" => "David", "Nachname" => "Koshors", "Stadt" => "Hamburg" }
 adressen << personen
-adressen.size.times { |i, key, value| puts "#{i+1}. Person:\n"; adressen[i].each { |key, value| puts "#{key}: #{value}" } }
+adressen.size.times { |i| puts "#{i+1}. Person:\n"; adressen[i].each { |key, value| puts "#{key}: #{value}" } }
+puts "------ODER------"
+person = { vorname: "Theo", nachname: "Sommer", stadt: "Lodz" }
+adressen = [person]
+person = { vorname: "Peter", nachname: "Pan", stadt: "New York" }
+adressen << person
+person = { vorname: "Ludmilla", nachname: "Szenurji", stadt: "Peking" }
+adressen << person
+i = 1
+adressen.each do |var|
+	puts "#{i}. Person:\n"
+	var.each do |key, val|
+		puts "#{key.capitalize}: #{val}"
+	end
+	i += 1
+end
 puts "\n"
 # 2. Worte
 # a. Bilde ein Array mit den Worten: Pflaume, Bauschaum, Auster
@@ -154,7 +192,7 @@ puts "\n"
 puts "b----"
 suche = "aus"
 worte.size.times do |i|
-	puts worte[i] if worte[i].include?(suche)
+	puts worte[i] if worte[i].include?(suche) || worte[i].include?(suche.capitalize)
 end
 puts "\n"
 # c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
@@ -175,6 +213,7 @@ lotto = []
 	lotto << rand(49)
 end
 puts lotto
+puts lott = (1..49).to_a.sample(7)
 puts "\n"
 # b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
 puts "b----"
