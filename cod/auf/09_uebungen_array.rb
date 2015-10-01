@@ -18,15 +18,27 @@ end
 puts "\n"
 # c. erzeugen Sie in einem Block einen Hash, wobei Sie die Arraywerte als Index nutzen und als Wert eine Zufallszahl zwischen 100 und 200 speichern. 
 puts "c----"
-numbers.size.times { |i| hash = Hash[numbers[i], rand(100) + 100]; puts "#{hash}" }
+# numbers.size.times { |i| hash = Hash[numbers[i], rand(100) + 100]; puts "#{hash}" }
+# puts "------ODER------"
+hash = {}
+numbers.each do |val|
+	hash[val] = rand(100..200)
+end
+puts hash
 puts "\n"
 # d. Geben Sie diesen Hash anschließen etwa so aus: Index: 15 - Wert: 121
 puts "d----"
-numbers.size.times { |i| hash = { numbers[i] => rand(100) + 100 }; hash.each { |key, value| puts "Index: #{key} - Wert: #{value}" } }
+hash.each { |key, value| puts "Index: #{key} - Wert: #{value}" }
 puts "\n"
 # e. Ergänzen Sie die Ausgabe. Wenn der Wert größer als 150 ist, dann sieht die Ausgabe aus:  Index: 15 - Wert: 151. WOW
 puts "e----"
-numbers.size.times { |i| hash = { numbers[i] => rand(100) + 100} ; hash.each { |key, value| if value > 150; puts "Index: #{key} - Wert: #{value} WOW" else puts "Index: #{key} - Wert: #{value}" end } }
+hash.each do |key, value|
+	if value > 150
+		puts "Index: #{key} - Wert: #{value} WOW"
+	else
+		puts "Index: #{key} - Wert: #{value}"
+	end
+end 
 puts "\n"
 # f. Durchlaufen Sie das Array und speichern Sie die Quadratzahlen in einem Array
 puts "f----"
@@ -36,10 +48,22 @@ puts "#{quadrat}\n------ODER------"
 quadrat = []
 numbers.size.times { |i| quadrat << numbers[i] * numbers[i] }
 puts "#{quadrat}"
+puts "------ODER------"
+quadrat = []
+numbers.each do |val|
+	quadrat << val * val
+end
+puts quadrat
 puts "\n"
 # g. ! Durchlaufen Sie das Array und speichern Sie die Quadratzahlen in einem Hash mit der Zahl als Schlüssel
 puts "g----"
 quadrat.size.times { |i| hash2 = { quadrat[i] => rand(100) + 100 }; puts hash2 }
+puts "------ODER------"
+quadrat_hash = {}
+quadrat.each do |z|
+	quadrat_hash[z] = z * z
+end
+puts quadrat_hash
 puts "\n"
 # Zusatz Zahlen im Array und im Hash:
 # a. Legen Sie ein Array an mit 10 Primzahlen. Die Ausgabe des Arrays erzeugt:
