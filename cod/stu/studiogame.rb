@@ -18,4 +18,5 @@ players.each do |player|
 	player.w00t
 	player.w00t
 	puts player
+	puts player.player_spec
 end

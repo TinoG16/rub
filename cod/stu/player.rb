@@ -7,6 +7,14 @@ class Player
 		@health = phealth
 	end
 
+	def strong?
+		@health >= 100
+	end
+
+	def player_spec
+		strong? ? "#{@name} ist stark" : "#{@name} ist schwach"
+	end
+
 	def to_s
 		"Ich bin #{@name} mit einem Wert von #{@health} und einem Score von #{score}"
 	end

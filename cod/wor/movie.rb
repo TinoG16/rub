@@ -5,6 +5,14 @@ class Movie
 		@rank = prank
 	end
 
+	def hit?
+		@rank >= 10
+	end
+
+	def status
+		hit? ? "Hit" : "Flop"
+	end
+
 	def thumbs_up
 		@rank += 1
 	end

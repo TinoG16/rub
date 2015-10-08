@@ -1,0 +1,3 @@
+class Kunde
+
+end
