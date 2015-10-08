@@ -2,4 +2,11 @@ require_relative "kunde"
 require_relative "kredit"
 
 kunde1 = Kunde.new("Theo Sommer")
-puts kunde1
+kunde1.name = "Theo Sonnenschein"
+kunde1.gehalt = 2000
+kunde1.adresse = "Hermelinweg 11, 22159 Hamburg"
+kunde1.kundendaten
+
+kredit1 = Kredit.new(kunde1.kundendaten)
+kredit1.kredit = 5000
+kredit1.kreditdaten

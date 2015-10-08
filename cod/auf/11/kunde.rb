@@ -1,9 +1,12 @@
 class Kunde
 	attr_accessor :name
+	attr_accessor :gehalt
 	attr_writer :adresse
 	
 	def initialize(name)
 		@name = name
-		@vorname = 
+	end
+	def kundendaten
+		puts "#{@name.split.first.capitalize} #{@name.split.last.capitalize}, #{@adresse}"
 	end
 end
