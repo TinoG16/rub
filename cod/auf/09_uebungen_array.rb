@@ -149,7 +149,17 @@ primzahlen.size.times do |i|
 end
 puts "#{eins}: #{ein}"
 puts "#{zweis}: #{zwei}"
-puts "\n"
+puts "\n---ODER---"
+prim2 = {}
+primzahlen.size.times do |var|
+	if primzahlen[var].to_s.size <2;
+		prim2[primzahlen[var]] = "einstellig"
+	else
+		prim2[primzahlen[var]] = "zweistellig"
+	end
+end
+puts "Einstellig: #{prim2.select {|k,v| v == "einstellig"}.keys.join(",")}"
+puts "Zweistellig: #{prim2.select {|k,v| v == "zweistellig"}.keys.join(", ")}"
 # e. Fortsetzung Aufgabe b: 
 # Speichern Sie den Hash in dem Array adressen und legen Sie zwei weitere Hashes personen mit den gleichen Keys und anderen Werten an. Durchlaufen Sie das Array, sodass folgende Ausgabe erfolgt.
 # 1.Person:
@@ -194,16 +204,39 @@ suche = "aus"
 worte.size.times do |i|
 	puts worte[i] if worte[i].include?(suche) || worte[i].include?(suche.capitalize)
 end
+puts "\n----ODER----"
+liste = %w(Pflaume Bauschaum Auster)
+var = liste.select do |a|
+	a.include?("aus")
+end
+puts var
+puts "\n----ODER----"
+liste.each do |a|
+	if a.downcase["aus"] == "aus"
+		puts a
+	end
+end
 puts "\n"
 # c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
 puts "c----"
 puts worte.sort_by(&:length)
+puts "\n----ODER----"
+sortiert = liste.sort_by do |a|
+	a.length
+end
+puts sortiert
 puts "\n"
 # d. Ein Hash wird ausgegeben, das Wort als Index, die Anzahl der Buchstaben als Wert
 puts "d----"
 worte.size.times do |i|
 	puts wh = { worte[i] => worte[i].length }
 end
+puts "----ODER----"
+hash = {}
+worte.each do |l|
+	hash[l] = l.length
+end
+puts hash
 puts "\n"
 # 3. Lottogenerator:
 # a. Schreiben Sie einen kleinen Lottozahlengenerator. Es sollen 7 Zahlen aus 49 Möglichkeiten in einem Array ausgegeben werden.
@@ -213,7 +246,8 @@ lotto = []
 	lotto << rand(49)
 end
 puts lotto
-puts lott = (1..49).to_a.sample(7)
+puts "----ODER----"
+puts lott = (1..49).to_a.sample(7).sort
 puts "\n"
 # b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
 puts "b----"
@@ -226,6 +260,13 @@ namen.size.times do |i|
 	lh = { namen[i] => lotto }
 	puts lh
 end
+puts "\n"
+puts "----ODER----"
+lotto = {}
+%w(Peter Paul Mary).each do |vorname|
+	lotto[vorname] = (1..49).to_a.sample(7).sort
+end
+puts lotto
 puts "\n"
 # 4. Vergleich:
 # str_1 = "Programmieren, Federball, Whisky"
