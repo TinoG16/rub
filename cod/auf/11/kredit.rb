@@ -6,6 +6,6 @@ class Kredit
 		@kunde = kundendaten
 	end
 	def kreditdaten
-		puts "#{@kunde} Jahresgehalt: 24000 Euro Kredit: #{@kredit} Euro"
+		 "#{@kunde} Jahresgehalt: 24000 Euro Kredit: #{@kredit} Euro"
 	end
 end
